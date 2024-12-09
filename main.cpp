@@ -7,7 +7,7 @@
 #include <stdexcept>
 
 // Custom exceptions
-class invalidCharacterException : public exception {
+class invalidCharacterException : public std::exception {
 public:
     const char* what() const noexcept override {
         return "Invalid start character. Start must be a letter (A-Z or a-z).";
@@ -44,36 +44,36 @@ char character(char start, int offset) {
 int main() {
     // Test cases
     try {
-        cout << "character('a', 1) = " << character('a', 1) << '\n';
-    } catch (const exception& e) {
-        cerr << "Error: " << e.what() << '\n';
-    }
-
-    try {
-        cout << "character('a', -1) = ";
-        cout << character('a', -1) << '\n';
-    } catch (const exception& e) {
-        cerr << "Error: " << e.what() << '\n';
-    }
-
-    try {
-        cout << "character('Z', -1) = " << character('Z', -1) << '\n';
-    } catch (const exception& e) {
-        cerr << "Error: " << e.what() << '\n';
-    }
-
-    try {
-        cout << "character('?', 5) = ";
-        cout << character('?', 5) << '\n';
+        std::cout << "character('a', 1) = " << character('a', 1) << '\n';
     } catch (const std::exception& e) {
-        cerr << "Error: " << e.what() << '\n';
+        std::cerr << "Error: " << e.what() << '\n';
     }
 
     try {
-        cout << "character('A', 32) = ";
-        cout << character('A', 32) << '\n';
-    } catch (const exception& e) {
-        cerr << "Error: " << e.what() << '\n';
+        std::cout << "character('a', -1) = ";
+        std::cout << character('a', -1) << '\n';
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << '\n';
+    }
+
+    try {
+        std::cout << "character('Z', -1) = " << character('Z', -1) << '\n';
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << '\n';
+    }
+
+    try {
+        std::cout << "character('?', 5) = ";
+        std::cout << character('?', 5) << '\n';
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << '\n';
+    }
+
+    try {
+        std::cout << "character('A', 32) = ";
+        std::cout << character('A', 32) << '\n';
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << '\n';
     }
 
     return 0;
