@@ -1,3 +1,8 @@
+// Brianna Chase
+// CIS 1202 501
+// Prof. Melissa Goodall
+// December 8th, 2024
+
 #include <iostream>
 #include <stdexcept>
 
